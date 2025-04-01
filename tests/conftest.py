@@ -46,5 +46,4 @@ def tv_category() -> Any:
     return Category(
         name="Телевизоры",
         description="Современный телевизор, который позволяет наслаждаться просмотром",
-        products=[Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)],
-    )
+        products=[Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)])
