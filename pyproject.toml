@@ -8,9 +8,22 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pytest-cov (>=6.0.0,<7.0.0)",
+    "isort (>=6.0.1,<7.0.0)",
+    "pytest-mock (>=3.14.0,<4.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "mock (>=5.2.0,<6.0.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.lint.dependencies]
+pandas = "^2.2.3"
+black = "^25.1.0"
+flake8 = "^7.2.0"
+mypy = "^1.15.0"
+dotenv = "^0.9.9"
+
