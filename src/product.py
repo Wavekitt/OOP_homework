@@ -34,7 +34,13 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other: Any) -> Any:
-        return self.product_cost + other.product_cost
+        """
+        Метод возвращает полную стоимость всех товаров на складе выбранной категории товаров.
+        """
+        if type(other) is self.__class__:
+            return self.product_cost + other.product_cost
+        else:
+            raise TypeError
 
     @staticmethod
     def check_product_list(name: str, price: float, quantity: int) -> bool:

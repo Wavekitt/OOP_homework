@@ -36,3 +36,10 @@ def test_category_products_getter(smartphone_category: Category) -> None:
 
 def test_category_str(smartphone_category: Category) -> None:
     assert str(smartphone_category) == "Смартфоны, количество продукта: 27 шт."
+
+
+def test_category_add_product_error(smartphone_category: Category, capsys) -> None:
+    new_product = "12121"
+    smartphone_category.add_product(new_product)
+    captured = capsys.readouterr()
+    assert captured.out.strip() == "Неверный тип"
