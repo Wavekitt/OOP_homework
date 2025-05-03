@@ -43,3 +43,8 @@ def test_category_add_product_error(smartphone_category: Category, capsys) -> No
     smartphone_category.add_product(new_product)
     captured = capsys.readouterr()
     assert captured.out.strip() == "Неверный тип"
+
+
+def test_category_middle_price(smartphone_category: Category, category_without_product: Category) -> None:
+    assert smartphone_category.middle_price() == 140333.33
+    assert category_without_product.middle_price() == 0
