@@ -1,6 +1,6 @@
 from typing import Any
 from unittest.mock import MagicMock, patch
-
+import pytest
 from src.product import Product
 
 
@@ -72,3 +72,8 @@ def test_product_str(samsung_product: Product) -> None:
 
 def test_product_add(samsung_product: Product, iphone_product: Product) -> None:
     assert samsung_product + iphone_product == 2580000
+
+
+def test_product_with_zero_quantity() -> None:
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product(name="Samsung23", description="256GB, Серый цвет", price=180.0, quantity=0)
