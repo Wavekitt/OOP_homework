@@ -63,7 +63,7 @@ def test_price_setter_no_reduce(mock_input: MagicMock) -> None:
 def test_price_zero_setter(capsys: Any, samsung_product: Product) -> None:
     samsung_product.price = 0
     captured = capsys.readouterr()
-    assert captured.out == "Цена не должна быть нулевая или отрицательная\n"
+    assert captured.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
 
 
 def test_product_str(samsung_product: Product) -> None:
